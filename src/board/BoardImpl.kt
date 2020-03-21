@@ -72,10 +72,7 @@ private open class SquareBoardBase(override val width: Int) : SquareBoard {
      */
     override fun getCell(i: Int, j: Int): Cell =
         if (validateIndices(i, j)) {
-            val cellId = (i - 1) + width * (j - 1)
-            if (!cellMap.containsKey(cellId))
-                cellMap[cellId] = Cell(i, j)
-            cellMap.getValue(cellId)
+            cellMap.getOrPut((i - 1) + width * (j - 1), { Cell(i, j) })
         }
         else
             throw IllegalArgumentException("Indices out of valid range!")
