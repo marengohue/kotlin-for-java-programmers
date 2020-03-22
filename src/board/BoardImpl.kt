@@ -91,6 +91,7 @@ private open class SquareBoardBase(override val width: Int) : SquareBoard {
                 i -> (1..width).map { j -> getCell(i, j) }
             }
 
+
     /**
      * Retrieves the range of cells from (i, jMin) to (i, jMax)
      */

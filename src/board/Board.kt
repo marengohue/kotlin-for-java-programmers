@@ -13,6 +13,13 @@ enum class Direction {
         RIGHT -> LEFT
         LEFT -> RIGHT
     }
+
+    fun toCoordinateDelta() = when(this) {
+        UP -> -1 to 0
+        DOWN -> 1 to 0
+        RIGHT -> 0 to 1
+        LEFT -> 0 to -1
+    }
 }
 
 interface SquareBoard {
